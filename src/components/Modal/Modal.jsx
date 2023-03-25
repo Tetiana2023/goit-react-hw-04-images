@@ -28,8 +28,8 @@ export const Modal = ({ id, largeImageURL, tags, closeModel, }) => {
   };
 
   return createPortal(
-    <div className={css.overlay} onClick={hendleBackdropClick}>
-      <div className={css.modal} id={id}>
+    <div className={css.overlay} onClose={hendleBackdropClick}>
+      <div className={css.modal} kay={id}>
         <img src={largeImageURL} alt={tags} />
       </div>
     </div>,
