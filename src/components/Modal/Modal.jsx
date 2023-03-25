@@ -16,6 +16,8 @@ export const Modal = ({ id, largeImageURL, tags, closeModel, }) => {
   };
     window.addEventListener('keydown', hendleKeyDown);
     return ()=> window.removeEventListener('keydown', hendleKeyDown);
+
+    
   },[closeModel]
   );
 

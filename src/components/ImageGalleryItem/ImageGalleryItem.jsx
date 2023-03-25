@@ -3,12 +3,17 @@ import css from './ImageGalleryItem.module.css';
 import { Modal } from 'components/Modal/Modal';
 import { useState } from 'react';
 
-export const ImageGalleryItem = ({id, webformatURL, tags, largeImageURL, hendleBackdropClick }) => {
+export const ImageGalleryItem = ({
+  id,
+  webformatURL,
+  tags,
+  largeImageURL,
+  hendleBackdropClick,
+}) => {
   const [showModal, setShowModal] = useState(false);
 
-  const openModel =()=> {
-    setShowModal(true)
-
+  const openModel = () => {
+    setShowModal(true);
   };
   const closeModel = () => {
     setShowModal(false);
@@ -20,24 +25,21 @@ export const ImageGalleryItem = ({id, webformatURL, tags, largeImageURL, hendleB
   //   }
   // };
 
- return (<li
-    className={css.imageGalleryItem}
-    key={id}
-   onClick={openModel}
-  >
-    <img className={css.image} src={webformatURL}   alt={tags} />
-    {showModal && (
-      <Modal
-      closeModel={closeModel}
-        closeBackdrop={hendleBackdropClick}
-        id={id}
-        tags={tags}
-        largeImageURL={largeImageURL}
-      />
-    )}
-  </li>)
-
-}
+  return (
+    <li className={css.imageGalleryItem} key={id} onClick={openModel}>
+      <img className={css.image} src={webformatURL} alt={tags} />
+      {showModal && (
+        <Modal
+          closeModel={closeModel}
+          closeBackdrop={hendleBackdropClick}
+          id={id}
+          tags={tags}
+          largeImageURL={largeImageURL}
+        />
+      )}
+    </li>
+  );
+};
 
 // export class ImageGalleryItem extends Component {
 //   state = {
